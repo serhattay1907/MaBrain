@@ -1,0 +1,16 @@
+[
+  {"input": "Downloads klasöründeki dosyaları listele", "expected_agent": "conscience"},
+  {"input": "PDF'leri Documents klasörüne taşı", "expected_agent": "conscience"},
+  {"input": "rapor.docx dosyasını bul", "expected_agent": "conscience"},
+  {"input": "yarın saat 10'a hatırlatma kur", "expected_agent": "daily"},
+  {"input": "bugünkü hatırlatmalarımı göster", "expected_agent": "daily"},
+  {"input": "TEKNOFEST toplantısı için hatırlatma ekle", "expected_agent": "daily"},
+  {"input": "bugün teknoloji dünyasında ne var", "expected_agent": "news"},
+  {"input": "dolar kaç TL", "expected_agent": "news"},
+  {"input": "bitcoin fiyatı", "expected_agent": "news"},
+  {"input": "yeni klasör oluştur", "expected_agent": "conscience"},
+  {"input": "bu hafta hatırlatmalarım", "expected_agent": "daily"},
+  {"input": "ekonomi haberleri", "expected_agent": "news"},
+  {"input": "İHA haberleri neler", "expected_agent": "news"},
+  {"input": "sabah rutinime ne eklesem", "expected_agent": "daily"}
+]
