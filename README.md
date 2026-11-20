@@ -8,15 +8,18 @@ A personal desktop assistant where specialised AI agents — each with its own d
 
 ## 🏗️ Architecture
 
-```
-User (CLI) ──▶ Obsidian Router ──▶ intent → agent
-                    │                 ├── Conscience  · file & task management
-                    │                 ├── Daily       · reminders & routines
-                    │                 └── News        · news, markets, current events
-                    ▼
-             Conversation memory (in-RAM window + SQLite)
-                    │
-        Core: Config · Logger · Token Budget · Path Safety
+```mermaid
+flowchart LR
+    U([User · CLI]) --> R{{"Obsidian router<br/>intent → JSON"}}
+    R -->|files & tasks| C[Conscience agent]
+    R -->|reminders| D[Daily agent]
+    R -->|news & markets| N[News agent]
+    C --> FT[["File tools<br/>list · search · move · rename"]]
+    D --> RT[["Reminder tools<br/>SQLite"]]
+    N --> WT[["Web search<br/>DuckDuckGo"]]
+    R <--> M[("Conversation memory<br/>RAM window + SQLite")]
+    FT -.->|every path checked| S["Path safety<br/>whitelisted folders only"]
+    C & D & N -.->|every LLM call| B["Daily token budget"]
 ```
 
 - **Intent routing** — Claude classifies each message into a domain (strict JSON output) and Obsidian dispatches it to the right agent
